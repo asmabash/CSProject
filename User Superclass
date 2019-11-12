@@ -1,0 +1,29 @@
+
+public class User {
+	
+	// attributes
+	private String name;
+	private String userID;
+	private int age;
+	private String email;
+	
+	//methods
+	User(String name, String userID, int age, String email)
+	{
+		this.name = name;
+		this.userID = userID;
+		this.age = age;
+		this.email = email;
+	}
+	
+	
+	public String toString()
+	{
+		 return "Name: " + this.name + "User ID: " + this.userID + 
+				 "Age: " + this.age + "Email Address: " + this.email;
+	}
+	public void setEmail (String newEmail)
+	{
+		 this.email = newEmail;
+	}
+}
