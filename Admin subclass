@@ -1,0 +1,37 @@
+
+public class Admin extends User {
+	
+	// attributes
+	private double salary;
+	private String status;
+	
+	// methods
+	Admin (String name, String userID, int age, String email, double salary, String status)
+	{
+		super(name, userID, age, email);
+		this.salary = salary;
+		this.status = status;
+	}
+	
+	boolean removeCustomer(int ID)
+	{
+		
+	}
+	
+	void setSalary(double newSalary)
+	{
+		this.salary = newSalary;
+	}
+	
+	void setStatus(String newStatus)
+	{
+		
+	}
+	
+	@Override
+	public String toString()
+	{
+		
+	}
+
+}
