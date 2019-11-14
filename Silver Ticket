@@ -1,0 +1,15 @@
+
+public class SilverTicket extends Ticket {
+	
+	//attributes
+	private int availableTickets = 24;
+	private final int price = 30;
+	
+	//methods
+	@Override
+	 public String toString()
+	 {
+		 return super.toString() + "\nAvailable Silver Tickets: " + this.availableTickets;
+	 }
+
+}
