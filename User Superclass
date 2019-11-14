@@ -6,6 +6,7 @@ public class User {
 	private String userID;
 	private int age;
 	private String email;
+	private static int noOfUsers;
 	
 	//methods
 	User(String name, String userID, int age, String email)
@@ -14,16 +15,52 @@ public class User {
 		this.userID = userID;
 		this.age = age;
 		this.email = email;
+		noOfUsers ++;
 	}
 	
 	
 	public String toString()
 	{
-		 return "Name: " + this.name + "User ID: " + this.userID + 
-				 "Age: " + this.age + "Email Address: " + this.email;
+		 return "\nName: " + this.name + "\nUser ID: " + this.userID + 
+				 "\nAge: " + this.age + "\nEmail Address: " + this.email;
 	}
+	
+	public String getUserID()
+	{
+		return this.userID;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public int getAge()
+	{
+		return this.age;
+	}
+	public String getEmail()
+	{
+		return this.email;
+	}
+	public static int getnoOfUsers()
+	{
+		return noOfUsers;
+	}
+	/*public static void setnoOfUsers(int newnoOfUsers)
+	 * {
+	 * 		noOfUsers=newnoOfUsers;
+	 * }
+	 */
 	public void setEmail (String newEmail)
 	{
 		 this.email = newEmail;
+		 
 	}
+	
+	
+	
+	
+	
+	
+	
+
 }
