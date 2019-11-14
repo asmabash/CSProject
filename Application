@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Application {
+	Scanner in = new Scanner (System.in);
+	public static void userMenu()
+	{
+		System.out.println("\t\t***Welcome to Cinema Boking System***");
+		System.out.println("\t\t---------------------------------------------------");
+		System.out.println("Are you an 1-admin or a 2-customer? ");	
+	}
+	
+	public static void adminMenu()
+	{
+		System.out.println("What operation would you like to perform?");
+		System.out.println("1- add addmin\n2- add customer\n3- Remove customer\n4- Set salary "
+				+ "\n5- set status \n6- display movies \n7- edit movies \n"
+				+ "8- display customers \n9- display admins");
+		
+		{
+		
+		}
+		
+	}
+	
+	public static void customerMenu()
+	{
+		
+	}
+
+
+	public static void main(String[] args) {
+		
+		userMenu();
+		Scanner in = new Scanner(System.in);
+		int choice = in.nextInt();
+		switch(choice)
+		{
+		case 1:
+			adminMenu();
+			int adminChoice = in.nextInt();
+			switch(adminChoice)
+			{
+			
+			}
+			break;
+		case 2:
+			customerMenu();
+			int 
+			break;
+		}
+	}
+}
