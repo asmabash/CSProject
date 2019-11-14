@@ -13,25 +13,46 @@ public class Admin extends User {
 		this.status = status;
 	}
 	
-	boolean removeCustomer(int ID)
+	boolean removeCustomer(Customer[] customers, String ID)
 	{
-		
+		boolean removed = false;
+		for( int i = 0; i < Customer.getNoOfCustomers(); i++)
+		{
+			if (ID.equals(customers[i].getUserID()) )
+			{
+				for(int j = i; j >= 0; j--)
+				{
+					customers[j] = customers[j+1];
+					Customer.setNoOfCustomers((Customer.getNoOfCustomers())-1);
+					removed = true;
+				}
+			}	
+		}
+		return removed;
 	}
 	
-	void setSalary(double newSalary)
+	public void setSalary(double newSalary)
 	{
 		this.salary = newSalary;
 	}
 	
-	void setStatus(String newStatus)
+	public void setStatus(String newStatus)
 	{
-		
+		this.status=newStatus;
+	}
+	public double getSalary()
+	{
+		return this.salary;
+	}
+	public String getStatus()
+	{
+		return this.status;
 	}
 	
 	@Override
 	public String toString()
 	{
-		
+		return super.toString() + "\nStatus: " + this.status + "\nSalary: " + this.salary;
 	}
 
 }
