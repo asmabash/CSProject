@@ -1,0 +1,14 @@
+
+public class GoldTicket extends Ticket {
+	//attributes
+	private int availableTickets = 24;
+	private final int price = 30;
+	 
+	//methods
+	@Override
+	 public String toString()
+	 {
+		 return super.toString() + "\nAvailable Gold Tickets: " + this.availableTickets;
+	 }
+
+}
