@@ -3,7 +3,7 @@ public class Customer extends User {
 	
 	// attributes
 	private String genrePreference;
-	private static int noOfCustomer;
+	private static int noOfCustomers;
 
 	
 	// methods
@@ -13,6 +13,18 @@ public class Customer extends User {
 		this.genrePreference = genrePreference;
 	}
 	
+	public static int getNoOfCustomers()
+	{
+		return noOfCustomers;
+	}
+	public static void setNoOfCustomers(int newNoOfCustomers)
+	{
+		noOfCustomers=newNoOfCustomers;
+	}
+	public String getGenrePreference()
+	{
+		return this.genrePreference;
+	}
 	public void setGenrePreference(String newGenrePreference)
 	{
 		this.genrePreference = newGenrePreference;
@@ -21,7 +33,7 @@ public class Customer extends User {
 	@Override
 	public String toString()
 	{
-		
+		return super.toString() + "\nGenre Preference: " + this.genrePreference;
 	}
 	
 }
