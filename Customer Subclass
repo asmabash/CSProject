@@ -7,9 +7,9 @@ public class Customer extends User {
 
 	
 	// methods
-	Customer (String name, String userID, int age, String email, String genrePreference)
+	Customer (String name, int age, String email, String genrePreference)
 	{
-		super(name, userID, age, email);
+		super(name, age, email);
 		this.genrePreference = genrePreference;
 	}
 	
