@@ -1,23 +1,71 @@
-import java.util.Scanner;
+import java.util.*;
 public class Application {
-	Scanner in = new Scanner (System.in);
+	static Scanner in = new Scanner (System.in);
+	
+	public static void main(String[] args) {
+		List<Customer> customerList = new ArrayList<>();
+		List<Admin> adminList = new ArrayList<>();
+		userMenu();
+		//in.nextLine();
+		int choice = in.nextInt();
+		// current user - admin (or user (superclass) type?)
+		addAdmin(adminList);
+		// or adminList.add(running admin)?
+		
+		switch(choice)
+		{
+		case 1:
+			adminMenu();
+			in.nextLine();
+			int adminChoice = in.nextInt();
+			switch(adminChoice)
+			{
+			case 1:
+				addAdmin(adminList);
+				break;
+			case 2:
+				addCustomer(customerList);
+				break;
+			case 3:
+				System.out.println("\nPlease enter the ID of the customer: ");
+				String ID = in.next();
+			if (adminList.get(0).removeCustomer(customerList, ID))
+				{
+					// add name?
+					System.out.println("The customer has been successfully removed.");
+				}
+			else
+				System.out.println("Customer has not been found.");
+			break;
+			case 4:
+				
+			}
+			break;
+		case 2:
+			customerMenu();
+			int customerChoice = in.nextInt();
+			switch(customerChoice)
+			{
+			case 1:
+				
+			}
+			break;
+		}
+	}
+	
 	public static void userMenu()
 	{
-		System.out.println("\t\t***Welcome to Cinema Boking System***");
+		System.out.println("\t\t*** Welcome to Cinema Booking System ***");
 		System.out.println("\t\t---------------------------------------------------");
-		System.out.println("Are you an 1-admin or a 2-customer? ");	
+		System.out.println("Are you an 1-Admin or a 2-Customer? ");	
 	}
 	
 	public static void adminMenu()
 	{
 		System.out.println("What operation would you like to perform?");
-		System.out.println("1- add addmin\n2- add customer\n3- Remove customer\n4- Set salary "
-				+ "\n5- set status \n6- display movies \n7- edit movies \n"
-				+ "8- display customers \n9- display admins");
-		
-		{
-		
-		}
+		System.out.println("1- Add addmin\n2- Add customer\n3- Remove customer\n4- Set salary "
+				+ "\n5- Set status \n6- Display movies \n7- Edit movies \n"
+				+ "8- Display customers \n9- Display admins");
 		
 	}
 	
@@ -25,27 +73,41 @@ public class Application {
 	{
 		
 	}
-
-
-	public static void main(String[] args) {
-		
-		userMenu();
-		Scanner in = new Scanner(System.in);
-		int choice = in.nextInt();
-		switch(choice)
-		{
-		case 1:
-			adminMenu();
-			int adminChoice = in.nextInt();
-			switch(adminChoice)
-			{
-			
-			}
-			break;
-		case 2:
-			customerMenu();
-			int 
-			break;
-		}
+	
+	public static void addCustomer(List<Customer> customerList)
+	{	
+		System.out.println("\nName: ");
+		String customerName = in.nextLine();
+		System.out.println("\nAge: ");
+		int customerAge = in.nextInt();
+		System.out.println("\nEmail Address: ");
+		String customerEmail = in.next();
+		in.nextLine();
+		System.out.println("\nGenre Preference: ");
+		String genrePreference = in.nextLine();
+		customerList.add(new Customer(customerName, customerAge, customerEmail, genrePreference));
 	}
+
+	public static void addAdmin(List<Admin> adminList)
+	{
+		System.out.println("\nName: ");
+		String adminName = in.nextLine();
+		//in.nextLine();
+		System.out.println("\nAge: ");
+		//in.nextLine();
+		int adminAge = in.nextInt();
+		System.out.println("\nEmail Address: ");
+		String adminEmail = in.next();
+		System.out.println("\nStatus: ");
+		String adminStatus = in.nextLine();
+		in.nextLine();
+		System.out.println("\nSalary: ");
+		double adminSalary = in.nextDouble();
+		adminList.add(new Admin(adminName, adminAge, adminEmail, adminStatus, adminSalary));
+	}
+
+
+	
+
+	
 }
