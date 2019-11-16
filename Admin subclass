@@ -1,32 +1,32 @@
-
+import java.util.*;
 public class Admin extends User {
 	
 	// attributes
-	private double salary;
 	private String status;
+	private double salary;
+	
 	
 	// methods
-	Admin (String name, String userID, int age, String email, double salary, String status)
+	public Admin (String name, int age, String email, String status, double salary)
 	{
-		super(name, userID, age, email);
-		this.salary = salary;
+		super(name, age, email);
 		this.status = status;
+		this.salary = salary;
+		
 	}
 	
-	boolean removeCustomer(Customer[] customers, String ID)
+	boolean removeCustomer(List<Customer> customerList, String ID)
 	{
+		//loop to find intended customer then delete from list
 		boolean removed = false;
-		for( int i = 0; i < Customer.getNoOfCustomers(); i++)
+		for( int i = 0; i < customerList.size(); i++)
 		{
-			if (ID.equals(customers[i].getUserID()) )
+			if (ID.equals(customerList.get(i).getUserID()) )
 			{
-				for(int j = i; j >= 0; j--)
-				{
-					customers[j] = customers[j+1];
-					Customer.setNoOfCustomers((Customer.getNoOfCustomers())-1);
-					removed = true;
-				}
-			}	
+				customerList.remove(i);
+				Customer.setNoOfCustomers((Customer.getNoOfCustomers())-1);
+				removed = true;
+			}
 		}
 		return removed;
 	}
