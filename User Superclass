@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class User {
 	
@@ -9,15 +10,21 @@ public class User {
 	private static int noOfUsers;
 	
 	//methods
-	User(String name, String userID, int age, String email)
+	User(String name, int age, String email)
 	{
 		this.name = name;
-		this.userID = userID;
+		this.userID = generateID();
 		this.age = age;
 		this.email = email;
 		noOfUsers ++;
 	}
 	
+	// generate a random id for each user
+	public String generateID()
+	{
+		Random rand = new Random();
+		return Integer.toString(rand.nextInt());
+	}
 	
 	public String toString()
 	{
